@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "finetuning-grounding-dino-sam"
 version = "0.1.0"
-description = "CLI tool to finetune SAM and Grounding DINO on custom datasets"
+description = "Finetuning Grounding DINO and SAM on custom datasets"
 authors = [{ name = "Pratim Dasude" }]
 readme = "README.md"
 requires-python = ">=3.9"
