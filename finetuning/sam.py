@@ -506,14 +506,14 @@ def main():
     args = parse_args()
 
     config = {
-        "data_root": r"origin_robot\oR_dataset\cracks_cleaned",
+        "data_root": r"data\cracks_cleaned",
         "model_name": "facebook/sam-vit-base",
-        "output_dir": r"origin_robot\sam_old_finetune_outputs",
-        "max_train_samples": 1000,
-        "max_test_samples": 300,
-        "resize_to": 512,
+        "output_dir": r"data\sam_old_finetune_outputs",
+        "max_train_samples": 500,
+        "max_test_samples": 100,
+        "resize_to": 256,
         "batch_size": 1,
-        "num_epochs": 10,
+        "num_epochs": 1,
         "lr": 1e-5,
         "weight_decay": 1e-4,
         "num_workers": 0,
