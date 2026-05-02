@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "finetuning-grounding-dino-sam"
-version = "0.1.0"
+version = "0.1.1"
 description = "Finetuning Grounding DINO and SAM on custom datasets"
 authors = [{ name = "Pratim Dasude" }]
 readme = "README.md"
