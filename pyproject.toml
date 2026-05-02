@@ -1,0 +1,20 @@
+[project]
+name = "finetuning"
+version = "0.1.0"
+description = "SAM and Grounding DINO finetuning CLI"
+authors = [{name = "Pratim Dasude"}]
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+    "torch",
+    "torchvision",
+    "transformers",
+    "tqdm",
+    "Pillow",
+    "numpy",
+    "pycocotools"
+]
+
+[project.scripts]
+finetune = "finetuning.cli:main"
