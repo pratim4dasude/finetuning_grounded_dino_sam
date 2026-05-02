@@ -321,6 +321,46 @@ def run_sam_finetuning(
     box_jitter=10,
     seed=42,
 ):
+    """
+        Fine-tunes SAM mask decoder on a COCO polygon segmentation dataset.
+
+        Expected dataset structure:
+
+        data_root/
+            train/
+                _annotations.coco.json
+                image1.jpg
+                image2.jpg
+            test/
+                _annotations.coco.json
+                image1.jpg
+                image2.jpg
+
+        Args:
+            data_root: Root dataset folder.
+            model_name: Hugging Face SAM model name.
+            output_dir: Folder to save best and last checkpoints.
+            max_train_samples: Number of training samples to use.
+            max_test_samples: Number of test samples to use.
+            resize_to: Resize image and mask to this size.
+            batch_size: Training batch size.
+            num_epochs: Number of training epochs.
+            lr: Learning rate.
+            weight_decay: AdamW weight decay.
+            num_workers: DataLoader workers.
+            box_jitter: Random jitter added to bounding box prompt.
+            seed: Random seed.
+        Returns:
+            None (saves checkpoints to output_dir)
+
+        Outputs:
+            - last checkpoint (every epoch)
+            - best checkpoint (based on Dice score)
+
+        Metrics:
+            - IoU
+            - Dice Score
+        """
     set_seed(seed)
     os.makedirs(output_dir, exist_ok=True)
 
