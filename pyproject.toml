@@ -3,20 +3,33 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "finetuning"
+name = "finetuning-grounding-dino-sam"
 version = "0.1.0"
-description = "SAM and Grounding DINO finetuning CLI"
-authors = [{name = "Pratim Dasude"}]
+description = "CLI tool to finetune SAM and Grounding DINO on custom datasets"
+authors = [{ name = "Pratim Dasude" }]
 readme = "README.md"
 requires-python = ">=3.9"
 
-license = {text = "MIT"}
-keywords = ["computer vision", "segmentation", "detection", "sam", "grounding dino"]
+license = { text = "MIT" }
+
+keywords = [
+    "computer-vision",
+    "segmentation",
+    "object-detection",
+    "sam",
+    "grounding-dino",
+    "finetuning"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
 
 dependencies = [
-    "torch",
-    "torchvision",
-    "torchaudio",
     "transformers",
     "tqdm",
     "Pillow",
@@ -24,6 +37,11 @@ dependencies = [
     "scipy",
     "pycocotools"
 ]
+
+[project.urls]
+Homepage = "https://github.com/pratim4dasude/finetuning_grounded_dino_sam"
+Repository = "https://github.com/pratim4dasude/finetuning_grounded_dino_sam"
+Issues = "https://github.com/pratim4dasude/finetuning_grounded_dino_sam/issues"
 
 [project.scripts]
 finetune = "finetuning.cli:main"
